@@ -13,7 +13,7 @@ Objetivo
 
 Como acessar a ferramenta?
 ------------------------------
-O portal pode ser acessado no link : [Portal](http://gestaosaudeumc.96.lt/). 
+O portal pode ser acessado no link ao lado : [Portal](http://gestaosaudeumc.96.lt/). 
 
 Membros da equipe do portal : 
 ------------
