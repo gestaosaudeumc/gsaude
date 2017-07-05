@@ -1,13 +1,11 @@
-PROJETO Gestao Saude UMC 
+Projeto Gestão Saúde UMC 
 ============
 
 ![Bower version](https://img.shields.io/bower/v/adminlte.svg)
 [![npm version](https://img.shields.io/npm/v/admin-lte.svg)](https://www.npmjs.com/package/admin-lte)
 [![Packagist](https://img.shields.io/packagist/v/almasaeed2010/adminlte.svg)](https://packagist.org/packages/almasaeed2010/adminlte)
 
-**AdminLTE** -- is a fully responsive admin template. Based on **[Bootstrap 3](https://github.com/twbs/bootstrap)** framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops. Check out the live preview now and see for yourself.
-
-**Estrutura utilizada** -- Este projeto foi criado baseado no framework **[ADMINLTE](https://adminlte.io/)**. 
+**Estrutura utilizada** -- Este projeto deu início em maio/2017 foi criado baseado no framework **[ADMINLTE](https://adminlte.io/)**. 
 
 Objetivo
 ------------------------------
@@ -16,8 +14,13 @@ Objetivo
 Membros da equipe do portal : 
 ------------
 
-- Bruno Dantas 
+- Bruno Dantas <brunodantas01@gmail.com>
 
 Membros da equipe do Aplicativo : 
+------------
 
-- Bruno Dantas 
+- Lucas Batista <lucasbatistasantos@mail.com>
+- Alan Santana De Andrade <AlanSantana1995@hotmail.com>
+- Alexandre Mandri <alexandre.mandri@gmail.com>
+- Eduardo Tchen <eduardo.tchen@hotmail.com>
+- Victor Campos <victor_campos@me.com> 
