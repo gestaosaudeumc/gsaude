@@ -10,6 +10,7 @@ Projeto Gestão Saúde UMC
 Objetivo
 ------------------------------
 **Essa ferramenta foi criada com intuito de prover um sistema de gestão de saúde de uma empresa, trazendo facilidades como por exemplo: Aplicativo para acompanhamento dos colaboradores, utilização do portal para manutenção da ferramenta, Interfaces para analise de dados enviados pelo aplicativo, entre outros.**
+**Como acessar a ferramenta?** -- O portal pode ser acessado no link ao lado: **[Portal](http://gestaosaudeumc.96.lt/)**. 
 
 Membros da equipe do portal : 
 ------------
