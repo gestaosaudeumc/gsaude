@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/gestaosaudeumc/somaservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/gestaosaudeumc/somaservice">
+<types>
+<xsd:schema targetNamespace="http://localhost/gestaosaudeumc/somaservice"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="soma.getResultadoRequest">
+  <part name="type" type="xsd:string" /></message>
+<message name="soma.getResultadoResponse">
+  <part name="return" type="xsd:int" /></message>
+<portType name="somaservicePortType">
+  <operation name="soma.getResultado">
+    <documentation>Pegar soma de numeros separados</documentation>
+    <input message="tns:soma.getResultadoRequest"/>
+    <output message="tns:soma.getResultadoResponse"/>
+  </operation>
+</portType>
+<binding name="somaserviceBinding" type="tns:somaservicePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="soma.getResultado">
+    <soap:operation soapAction="http://localhost/gestaosaudeumc/somaservice#getResultado" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://localhost/gestaosaudeumc/somaservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://localhost/gestaosaudeumc/somaservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="somaservice">
+  <port name="somaservicePort" binding="tns:somaserviceBinding">
+    <soap:address location="http://localhost/gestaosaudeumc/pages/test/wssoma.php"/>
+  </port>
+</service>
+</definitions>

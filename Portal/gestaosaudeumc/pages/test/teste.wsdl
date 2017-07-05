@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/webservice/somatoria" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/webservice/somatoria">
+<types>
+<xsd:schema targetNamespace="http://localhost/webservice/somatoria"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="dataArray">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:return_array_php[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="imprime.ImprimeXMLRequest">
+  <part name="Datum" type="xsd:token" /></message>
+<message name="imprime.ImprimeXMLResponse">
+  <part name="return" type="tns:dataArray" /></message>
+<portType name="ImprimirPortType">
+  <operation name="imprime.ImprimeXML">
+    <documentation>Recebe 2 numeros separados por um _, ex: 2_5, entÃ£o ele soma 2 com 5</documentation>
+    <input message="tns:imprime.ImprimeXMLRequest"/>
+    <output message="tns:imprime.ImprimeXMLResponse"/>
+  </operation>
+</portType>
+<binding name="ImprimirBinding" type="tns:ImprimirPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="imprime.ImprimeXML">
+    <soap:operation soapAction="http://localhost/webservice/imprimir#ImprimeXML" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://localhost/webservice/imprimir" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://localhost/webservice/imprimir" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="Imprimir">
+  <port name="ImprimirPort" binding="tns:ImprimirBinding">
+    <soap:address location="http://localhost/webservice/testeserver.php"/>
+  </port>
+</service>
+</definitions>

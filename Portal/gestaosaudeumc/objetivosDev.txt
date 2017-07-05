@@ -1,0 +1,36 @@
+------- PHP - portal - BACK: 
+- Desenvolver LOGIN OK
+- Desenvolver Esqueci Senha
+- Desenvolver Cadastro de colaboradores e importação atraves de arquivo txt 
+- Desenvolver criação de formulário para colaborador
+- Enviar notícias 
+- Gerar métricas (relatórios)
+
+------- PHP - portal - FRONT: 
+- Desenvolver LOGIN OK
+- Desenvolver Esqueci Senha
+- Desenvolver Cadastro de colaboradores e importação atraves de arquivo txt 
+- Desenvolver criação de formulário para colaborador
+- Enviar notícias 
+- Gerar métricas (relatórios)
+
+
+
+------- Webservices: 
+- Webservice para validar login
+- Webservice Receber informações de questionários respondidos
+- Webservice Receber Dados da academia dos colaborador
+
+
+============
+
+Feedback 24/05/2017 
+Necessário Estatistica: 	
+	Quantos acessaram o APP ? 
+	Feedback do APP ? 
+	Follow up de utilização ?
+	Feedbacks do aplicativo 
+	Feedback do questionário
+	Transformar em CSV 
+	
+Montar toda estutura em perguntas fechadas	
