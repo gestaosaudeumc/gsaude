@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://gestaosaudeumc.96.it/pages/webservice/wsgestaosaude" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://gestaosaudeumc.96.it/pages/webservice/wsgestaosaude">
+<types>
+<xsd:schema targetNamespace="http://gestaosaudeumc.96.it/pages/webservice/wsgestaosaude"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="wsgestaosaude.getResultRequest">
+  <part name="type" type="xsd:string" /></message>
+<message name="wsgestaosaude.getResultResponse">
+  <part name="return" type="xsd:Array" /></message>
+<message name="wsgestaosaude.validaUsuRequest">
+  <part name="type" type="xsd:string" /></message>
+<message name="wsgestaosaude.validaUsuResponse">
+  <part name="return" type="xsd:Array" /></message>
+<message name="wsgestaosaude.retQuestionariosRequest">
+  <part name="type" type="xsd:string" /></message>
+<message name="wsgestaosaude.retQuestionariosResponse">
+  <part name="return" type="xsd:Array" /></message>
+<message name="wsgestaosaude.retAtividadesRequest">
+  <part name="type" type="xsd:string" /></message>
+<message name="wsgestaosaude.retAtividadesResponse">
+  <part name="return" type="xsd:Array" /></message>
+<portType name="WebService Gestao SaudePortType">
+  <operation name="wsgestaosaude.getResult">
+    <documentation>Recebe 2 numeros separados por um _, ex: 2_5, entao ele soma 2 com 5</documentation>
+    <input message="tns:wsgestaosaude.getResultRequest"/>
+    <output message="tns:wsgestaosaude.getResultResponse"/>
+  </operation>
+  <operation name="wsgestaosaude.validaUsu">
+    <documentation>Recebe cpf e senha separados por um _, retorno : 1 se ok 0 se não</documentation>
+    <input message="tns:wsgestaosaude.validaUsuRequest"/>
+    <output message="tns:wsgestaosaude.validaUsuResponse"/>
+  </operation>
+  <operation name="wsgestaosaude.retQuestionarios">
+    <documentation>Recebe cpf e retornar um Json com todos os questionários do banco de dados</documentation>
+    <input message="tns:wsgestaosaude.retQuestionariosRequest"/>
+    <output message="tns:wsgestaosaude.retQuestionariosResponse"/>
+  </operation>
+  <operation name="wsgestaosaude.retAtividades">
+    <documentation>Retorna a lista de atividades cadastradas no portal</documentation>
+    <input message="tns:wsgestaosaude.retAtividadesRequest"/>
+    <output message="tns:wsgestaosaude.retAtividadesResponse"/>
+  </operation>
+</portType>
+<binding name="WebService Gestao SaudeBinding" type="tns:WebService Gestao SaudePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="wsgestaosaude.getResult">
+    <soap:operation soapAction="http://gestaosaudeumc.96.it/pages/webservice/wsgestaosaude#getResult" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://gestaosaudeumc.96.it/pages/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://gestaosaudeumc.96.it/pages/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="wsgestaosaude.validaUsu">
+    <soap:operation soapAction="http://localhost/webservice/wsgestaosaude#validaUsu" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://localhost/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://localhost/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="wsgestaosaude.retQuestionarios">
+    <soap:operation soapAction="http://localhost/webservice/wsgestaosaude#retQuestionarios" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://localhost/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://localhost/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="wsgestaosaude.retAtividades">
+    <soap:operation soapAction="http://localhost/webservice/wsgestaosaude#retAtividades" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://localhost/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://localhost/webservice/wsgestaosaude" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="WebService Gestao Saude">
+  <port name="WebService Gestao SaudePort" binding="tns:WebService Gestao SaudeBinding">
+    <soap:address location="http://localhost/gestaosaudeumc/pages/webservice/wsgestaosaudeserver.php"/>
+  </port>
+</service>
+</definitions>

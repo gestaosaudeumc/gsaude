@@ -1,0 +1,9 @@
+Estatistica: 	
+	Quantos acessaram o APP ? 
+	Feedback do APP ? 
+	Follow up de utilização ?
+	Feedbacks do aplicativo 
+	Feedback do questionário
+	Transformar em CSV 
+	
+Montar toda estutura em perguntas fechadas	
