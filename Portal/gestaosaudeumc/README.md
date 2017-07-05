@@ -16,8 +16,13 @@ Objetivo
 Membros da equipe do portal : 
 ------------
 
-- Bruno Dantas 
+- Bruno Dantas <brunodantas01@gmail.com>
 
 Membros da equipe do Aplicativo : 
+------------
 
-- Bruno Dantas 
+- Lucas Batista <lucasbatistasantos@mail.com>
+- Alan Santana De Andrade <AlanSantana1995@hotmail.com>
+- Alexandre Mandri <alexandre.mandri@gmail.com>
+- Eduardo Tchen <eduardo.tchen@hotmail.com>
+- Victor Campos <victor_campos@me.com>
