@@ -17,8 +17,8 @@ echo ' <!-- Left side column. contains the logo and sidebar -->
           <i class="fa fa-user-'.($_SESSION["perfil"] ==1 ? 'md' : '').'"></i>'.($_SESSION["perfil"] ==1 ? ' Médico' : ' Colaborador').'</a>
         </div>
       </div>
-      <!-- search form 
-      
+      <!-- search form
+
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -32,7 +32,7 @@ echo ' <!-- Left side column. contains the logo and sidebar -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MENU PRINCIPAL</li>
-        
+
       <!-- Menu Lateral -->
         <!-- Relatórios -->
         <li class="treeview">
@@ -44,7 +44,7 @@ echo ' <!-- Left side column. contains the logo and sidebar -->
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="relat_atividades.php"><i class="fa fa-users"></i>Atividades por colaborador</a></li>      
+            <li><a href="relat_atividades.php"><i class="fa fa-users"></i>Atividades por colaborador</a></li>
           </ul>
         </li>
 
@@ -65,9 +65,8 @@ echo ' <!-- Left side column. contains the logo and sidebar -->
 
     </ul>
         </li>
-    
-    
-    
+
+
         <!-- Novo colaborador-->
         <li>
           <a href="novoColaborador.php">
@@ -120,9 +119,10 @@ echo ' <!-- Left side column. contains the logo and sidebar -->
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="relat_atividades.php"><i class="fa fa-users"></i>Cadastro de premiação</a></li>      
-            <li><a href="relat_atividades.php"><i class="fa fa-users"></i>Cadastro de metas</a></li>      
-            <li><a href="relat_atividades.php"><i class="fa fa-users"></i>Cadastro de Desafios</a></li>      
+            <li><a href="cad_premiacao.php"><i class="fa fa-users"></i>Cadastro de premiação</a></li>
+            <li><a href="cad_metas.php"><i class="fa fa-users"></i>Cadastro de metas</a></li>
+            <li><a href="cad_metas_evento.php"><i class="fa fa-users"></i>Cadastro de metas c/ evento</a></li>
+            <li><a href="cad_desafios.php"><i class="fa fa-users"></i>Cadastro de Desafios</a></li>
 
           </ul>
         </li>

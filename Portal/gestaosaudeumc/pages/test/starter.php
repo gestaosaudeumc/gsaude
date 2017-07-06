@@ -1,6 +1,6 @@
-<?php	include 'cabec.php'; 
+<?php	include 'cabec.php';
 
-$sql = "SELECT count(*) as nUsuarios FROM usuarios";
+$sql = "SELECT count(*) as nUsuarios FROM p_user";
 $result = $db->query($sql);
 while($row = $result->fetch_assoc()) {
     $nusu = $row["nUsuarios"];
@@ -45,5 +45,5 @@ $db->close();
           <!-- /.box -->
         </div>
  	  </section>
- 
+
 <?php include 'footer.php'; ?>

@@ -1,16 +1,17 @@
 <?php
 include 'config.php';
 
+$nAtividade 	= $_POST["nomeM"];
+$Objetivo	= $_POST["descricaoMeta"];
 
-$nAtividade 	= $_POST["nomeA"];
-$Objetivo	= $_POST["obj"];
 
 session_start();
 
-//TODO Validar conteúdo da campanha
     $sql = "
     INSERT INTO atividades(DESCRICAO, OBJETIVO)
     VALUES ('".$nAtividade."','".$Objetivo."') ";
+
+//INSERT INTO `phh_item`( `nome`, `descricao`, `tipo`, `pontuacao_xp`, `imagem`) VALUES ('teste','descricao','1','2',123)
 
     if (!$result = $db->query($sql)) {
         $uploadOk = 0;

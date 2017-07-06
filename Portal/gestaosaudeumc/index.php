@@ -18,7 +18,7 @@ try{
 
     }
   }
-}catch(Exception $e){} 
+}catch(Exception $e){}
 // se logado direcionar para pagina starter
 //if ($_SESSION['logado'] == 1){}
 
@@ -53,24 +53,24 @@ try{
 
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 
-  
+
   <!-- Código para Login AJAX -->
 	<script type="text/javascript">
 
 		$(document).ready(function(){
 			$('#errolog').hide(); //Esconde o elemento com id errolog
 			$('#formlogin').submit(function(){ 	//Ao submeter formulário
-				var email=$('#email').val();	//Pega valor do campo email
+				var usuario=$('#usuario').val();	//Pega valor do campo usuario
 				var password=$('#password').val();	//Pega valor do campo senha
 				$.ajax({			//Função AJAX
 					url:"pages/test/valida.php",			//Arquivo php
 					type:"post",				//Método de envio
-					data: "email="+email+"&password="+password,	//Dados
+					data: "usuario="+usuario+"&password="+password,	//Dados
 					success: function (result){			//Sucesso no AJAX
-								if(result==1){		 					
+								if(result==1){
 									location.href='pages/test/starter.php'	//Redireciona
 								}else{
-									
+
 									$("#errolog").fadeTo(1000, 500).slideUp(500, function(){
 										$("#errolog").slideUp(500);
 									});
@@ -82,8 +82,8 @@ try{
 		})
 
 	</script>
-  
-  
+
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -100,8 +100,9 @@ try{
 	</div>
     <form id="formlogin" method="post">
       <div class="form-group has-feedback">
-        <input id="email" type="email" class="form-control" placeholder="Email" required >
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      <input id="usuario" type="text" class="form-control" placeholder="Usuario" required >
+      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
       </div>
       <div class="form-group has-feedback">
         <input id="password" type="password" class="form-control" placeholder="Password" required >
@@ -131,7 +132,7 @@ try{
     </div>
     <!-- /.social-auth-links -->
 
-    <!-- TODO Fazer pagina  
+    <!-- TODO Fazer pagina
     <a href="#">Esqueci minha senha</a><br>
     <!--
       <a href="register.html" class="text-center">Cadastre-se</a>

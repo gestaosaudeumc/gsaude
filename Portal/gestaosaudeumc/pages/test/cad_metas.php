@@ -31,10 +31,7 @@
     <div class="box box-info">
             <div class="box-header with-border">
               <?php echo $popUp; ?>
-              <h3 class="box-title">Cadastro de premiação</h3>
-              <!--
-                <br><small> Preencha as informações abaixo para que a nova atividade esteja disponível para os colaboradores </small>
-              -->
+              <h3 class="box-title">Cadastro de metas</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -45,11 +42,53 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Título</label>
-                  <input name= "nomeA" required type="text" class="form-control" id="inlineFormInput" placeholder="Digite aqui o título da premiação">
+                  <input name= "nomeM" required type="text" class="form-control" id="inlineFormInput" placeholder="Digite aqui o título da premiação">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Objetivo</label>
-				          <textarea required name="obj" class="form-control" rows="3" placeholder="Descreva aqui o objetivo da premiação"></textarea>
+                  <label for="exampleInputPassword1">Descrição da meta</label>
+				          <textarea required name="descricaoMeta" class="form-control" rows="3" placeholder="Descreva aqui o objetivo da premiação"></textarea>
+                </div>
+
+                <!-- TODO colocar aqui um campo para um numerico e um select com data, hora, minuto -->
+                <div class="form-group">
+                  <label for="Periodo">Selecione o período para completar:</label>
+                  <div class="input-group">
+                    <input type="number" min="1" required name="numPeriodo" class="form-control">
+                    <div class="input-group-addon">
+                      <select name="MedidaEscolhida" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                        <option selected="selected">Horas</option>
+                        <option>Minutos</option>
+                        <option>Dias</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TODO select com um ou mais premiações -->
+                <div class="form-group">
+                  <label for="Periodo">Selecione a premiação por completar essa Meta:</label>
+                  <select name="Premiacao" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                  <?php
+                    $flagLooping = true;
+                    $sql = "
+                    SELECT nome_premiacao FROM `phh_premiacao`
+                    ";
+                    $result = $db->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          if ($flagLooping){
+                            echo '<option selected="selected">'.$row["nome_premiacao"].'</option>';
+                            $flagLooping = false;
+                          }else{
+                            echo '<option>'.$row["nome_premiacao"].'</option>';
+                          }
+                        }
+                    }else{
+                      echo '<option selected="selected">Nao Existe premicao</option>';
+                    }
+                  ?>
+                  </select>
                 </div>
 
                 <div class="form-group">
@@ -59,7 +98,7 @@
                   </label>
                   &nbsp &nbsp&nbsp&nbsp&nbsp
                   <label> Completar Metas
-                    <input type="radio" name="r1" class="minimal">
+                    <input type="radio" name="r2" class="minimal">
                   </label>
                 </div>
 
@@ -76,7 +115,7 @@
 
             <!-- /.box-body -->
             </div>
-
+            <input type="hidden" name="tipoForm" value="1">
             <div class="box-footer">
               <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
